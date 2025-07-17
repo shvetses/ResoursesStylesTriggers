@@ -1,0 +1,23 @@
+﻿<Window x:Class="Example2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="200">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=chkBox1, Path=IsChecked}" 
+                             Value="True">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <CheckBox x:Name="chkBox1" Content="Деактивировать кнопку" />
+        <Button Content="Кнопка 1" />
+    </StackPanel>
+</Window>
