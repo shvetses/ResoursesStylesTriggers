@@ -4,11 +4,10 @@
              xmlns:local="clr-namespace:Example1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         <ResourceDictionary >
-             <ResourceDictionary.MergedDictionaries>
-                 <ResourceDictionary Source="Dictionary1.xaml"/>
-             </ResourceDictionary.MergedDictionaries>
-         </ResourceDictionary>
-   
+          <ResourceDictionary >
+              <ResourceDictionary.MergedDictionaries>
+                  <ResourceDictionary Source="Dictionary1.xaml"/>
+              </ResourceDictionary.MergedDictionaries>
+          </ResourceDictionary>
     </Application.Resources>
 </Application>

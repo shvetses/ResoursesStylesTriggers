@@ -8,51 +8,48 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="150" Width="400">
     <Window.Resources>
-        <SolidColorBrush x:Key="PrimaryBrush" Color="Blue" x:Shared="False"/>
-        <SolidColorBrush x:Key="SecondaryBrush" Color="Green"/>
+        <SolidColorBrush Color="Red" x:Key="PrimaryBrush"/>
+        <SolidColorBrush Color="Green" x:Key="SecondaryBrush"/>
         <sys:Double x:Key="PrimaryFontSize">14</sys:Double>
         <x:Array x:Key="ColorArray" Type="{x:Type sys:String}">
             <sys:String>Красный</sys:String>
-            <sys:String>Зеленый</sys:String>
             <sys:String>Синий</sys:String>
+            <sys:String>Зеленый</sys:String>
         </x:Array>
 
         <Style x:Key="BaseStyle">
             <Setter Property="Control.Background" Value="{StaticResource PrimaryBrush}"/>
-            <Setter Property="Control.BorderBrush" Value="{StaticResource SecondaryBrush}"/>
             <Setter Property="Control.FontSize" Value="{StaticResource PrimaryFontSize}"/>
+            <Setter Property="Control.BorderBrush" Value="{StaticResource SecondaryBrush}"/>
             <Setter Property="Control.Margin" Value="10"/>
         </Style>
+
         <Style TargetType="Button" BasedOn="{StaticResource BaseStyle}">
             <Style.Setters>
                 <Setter Property="Padding" Value="10"/>
+                <Setter Property="Background" Value="AliceBlue"/>
             </Style.Setters>
             <Style.Triggers>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
-                        <Condition  Property="IsMouseOver" Value="True"/>
-                        <Condition  Property="IsFocused" Value="True"/>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                        <Condition Property="IsFocused" Value="True"/>                        
                     </MultiTrigger.Conditions>
                     <MultiTrigger.Setters>
-                       <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontSize" Value="20"/>
                     </MultiTrigger.Setters>
-                </MultiTrigger>        
+                </MultiTrigger>          
                 
-               
+                
             </Style.Triggers>
         </Style>
+
+
     </Window.Resources>
     <StackPanel>
-        <Button Content="Кнопка 1" Click="Button_Click"/>
+        <Button Content="Кнопка 1"/>
+        <Button Content="Кнопка 2"/>
 
-
-        <Button Content="Кнопка 1" Background="{StaticResource SecondaryBrush}"/>
-        <Button Content="Кнопка 1" Background="{DynamicResource PrimaryBrush}"/>
-        <Button Content="Кнопка 1">
-            <Button.Background>
-                <StaticResource ResourceKey="SecondaryBrush"/>
-            </Button.Background>
-        </Button>
-        <ComboBox ItemsSource="{StaticResource ColorArray}" Style="{StaticResource BaseStyle}"/>
+        <ComboBox ItemsSource="{StaticResource ColorArray}"/>
     </StackPanel>
 </Window>
